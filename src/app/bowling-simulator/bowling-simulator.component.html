@@ -1,46 +1,78 @@
-<form>
+<div class="d-flex justify-content-center">
+  <!-- Input - pins dropped -->
+  <mat-form-field class="ms-4 field-max-width">
 
-  <div class="d-flex justify-content-center">
-    <!-- Input - pins dropped -->
-    <mat-form-field class="ms-4 field-max-width">
+    <mat-label>Enter a number of pins</mat-label>
 
-      <mat-label>Enter a number of pins</mat-label>
-
-      <input
-        [formControl]="pinsNumber"
-        matInput
-        type="number"
-      >
-
-      <button
-        (click)="pinsNumber.reset()"
-        *ngIf="pinsNumber.value"
-        aria-label="Clear"
-        mat-icon-button
-        matSuffix>
-        <mat-icon>close</mat-icon>
-      </button>
-
-      <mat-error *ngIf="pinsNumber.hasError('min') || pinsNumber.hasError('max')">
-        Please enter a valid number.
-      </mat-error>
-
-      <mat-error *ngIf="pinsNumber.hasError('required')">
-        In order to play that game, this input is required.
-      </mat-error>
-
-    </mat-form-field>
-  </div>
-
-  <div class="d-flex justify-content-center mt-3">
-    <button
-      [disabled]="pinsNumber.invalid"
-      mat-flat-button
-      color="primary"
+    <input
+      [formControl]="pinsNumber"
+      matInput
+      type="number"
     >
-      Play
+
+    <button
+      (click)="pinsNumber.reset()"
+      *ngIf="pinsNumber.value"
+      aria-label="Clear"
+      mat-icon-button
+      matSuffix>
+      <mat-icon>close</mat-icon>
     </button>
-  </div>
+
+    <mat-error *ngIf="pinsNumber.hasError('min') || pinsNumber.hasError('max')">
+      Please enter a valid number.
+    </mat-error>
+
+    <mat-error *ngIf="pinsNumber.hasError('required')">
+      In order to play that game, this input is required.
+    </mat-error>
+
+    <mat-hint *ngIf="roundRuleNotRespected">
+      Per round, there is only 10 pins that can fall.
+    </mat-hint>
+
+  </mat-form-field>
+</div>
+
+<div class="d-flex justify-content-center mt-2">
+  <button
+    (click)="saveRound(pinsNumber.value)"
+    [disabled]="pinsNumber.invalid || roundRuleNotRespected"
+    color="primary"
+    mat-flat-button
+  >
+    Play
+  </button>
+</div>
 
 
-</form>
+
+<div class="d-flex justify-content-center mt-3">
+  <h3> Current round : {{ currentRound }} </h3>
+</div>
+
+<div class="d-flex justify-content-center mt-2">
+  <h3> Total score : {{ totalScore }} </h3>
+</div>
+
+<!-- Popup if currentRound == maxRound partie terminé, veuillez raffraichir
+la page et bloquer le button jouer -->
+
+<div class="d-flex justify-content-center mt-2">
+
+  <table>
+    <tbody>
+    <tr>
+      <td>First throw</td>
+      <td>Second throw</td>
+    </tr>
+    <tr *ngFor="let row of [0,1,2,3,4,5,6,7,8,9]">
+      <td *ngFor="let col of [0,1]">
+        {{totalFallenPins[2 * row + col]}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+

@@ -8,21 +8,31 @@ import {BowlingSimulatorComponent} from './bowling-simulator/bowling-simulator.c
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {CommonModule} from "@angular/common";
+import {MatTableModule} from "@angular/material/table";
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
+import { GameFinishedDialogComponent } from './bowling-simulator/game-finished-dialog/game-finished-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BowlingSimulatorComponent
+    BowlingSimulatorComponent,
+    GameFinishedDialogComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
