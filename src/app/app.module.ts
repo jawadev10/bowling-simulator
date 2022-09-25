@@ -9,8 +9,6 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {CommonModule} from "@angular/common";
-import {MatTableModule} from "@angular/material/table";
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -25,8 +23,6 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dia
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule,
-    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

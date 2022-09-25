@@ -58,11 +58,13 @@ export class BowlingSimulatorComponent implements OnInit, OnDestroy {
     if (newValue || newValue === 0) {
       this.totalScore = this.totalScore + newValue;
       this.pinsFallenCurrentRound.push(newValue)
+
       if (this.pinsFallenCurrentRound.length === 2) {
         const newArray = this.pinsFallenCurrentRound as number[];
         this.totalFallenPins.push(...newArray);
         this.currentRound = this.currentRound + 1;
       }
+
     }
   }
 
