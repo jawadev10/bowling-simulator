@@ -21,9 +21,9 @@ export class BowlingSimulatorComponent implements OnInit, OnDestroy {
   public pinsFallenCurrentRound: number[] = [];
   public gameFinished = false;
   public roundRuleNotRespected?: boolean;
+  public totalThrows = 0;
 
   private destroy$: Subject<boolean> = new Subject<boolean>();
-  private totalThrows = 0;
 
 
   constructor() {}
