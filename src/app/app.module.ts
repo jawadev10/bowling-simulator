@@ -11,13 +11,11 @@ import {MatButtonModule} from "@angular/material/button";
 import {CommonModule} from "@angular/common";
 import {MatTableModule} from "@angular/material/table";
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
-import { GameFinishedDialogComponent } from './bowling-simulator/game-finished-dialog/game-finished-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BowlingSimulatorComponent,
-    GameFinishedDialogComponent
   ],
   imports: [
     CommonModule,
@@ -30,9 +28,7 @@ import { GameFinishedDialogComponent } from './bowling-simulator/game-finished-d
     MatTableModule,
     MatDialogModule
   ],
-  providers: [
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

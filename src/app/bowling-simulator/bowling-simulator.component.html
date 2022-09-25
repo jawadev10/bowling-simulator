@@ -1,5 +1,5 @@
+<!-- Input - pins dropped -->
 <div class="d-flex justify-content-center">
-  <!-- Input - pins dropped -->
   <mat-form-field class="ms-4 field-max-width">
 
     <mat-label>Enter a number of pins</mat-label>
@@ -34,10 +34,11 @@
   </mat-form-field>
 </div>
 
+<!-- Button to save pins  -->
 <div class="d-flex justify-content-center mt-2">
   <button
-    (click)="saveRound(pinsNumber.value)"
-    [disabled]="pinsNumber.invalid || roundRuleNotRespected"
+    (click)="saveThrow(pinsNumber.value)"
+    [disabled]="pinsNumber.invalid || roundRuleNotRespected || gameFinished"
     color="primary"
     mat-flat-button
   >
@@ -46,20 +47,18 @@
 </div>
 
 
-
+<!-- Current round  -->
 <div class="d-flex justify-content-center mt-3">
   <h3> Current round : {{ currentRound }} </h3>
 </div>
 
+<!-- Total score -->
 <div class="d-flex justify-content-center mt-2">
   <h3> Total score : {{ totalScore }} </h3>
 </div>
 
-<!-- Popup if currentRound == maxRound partie terminé, veuillez raffraichir
-la page et bloquer le button jouer -->
-
+<!-- Table score -->
 <div class="d-flex justify-content-center mt-2">
-
   <table>
     <tbody>
     <tr>
@@ -73,6 +72,5 @@ la page et bloquer le button jouer -->
     </tr>
     </tbody>
   </table>
-
 </div>
 
