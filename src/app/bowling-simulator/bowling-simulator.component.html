@@ -5,6 +5,7 @@
     <mat-label>Enter a number of pins</mat-label>
 
     <input
+      id="pins-number-inpt"
       [formControl]="pinsNumber"
       matInput
       type="number"
@@ -37,6 +38,7 @@
 <!-- Button to save pins  -->
 <div class="d-flex justify-content-center mt-2">
   <button
+    id="play-btn"
     (click)="saveThrow(pinsNumber.value)"
     [disabled]="pinsNumber.invalid || roundRuleNotRespected || gameFinished"
     color="primary"
