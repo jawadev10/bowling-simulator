@@ -1,4 +1,4 @@
-# Dapesco Bowling Simulator !
+# Bowling Simulator !
 
 <img width="618" alt="Screenshot 2022-09-25 at 17 11 09" src="https://user-images.githubusercontent.com/49078281/192150870-68685233-3991-44e1-9f3f-2287b39c3f3e.png">
 
