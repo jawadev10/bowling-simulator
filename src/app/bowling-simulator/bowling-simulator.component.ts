@@ -68,7 +68,7 @@ export class BowlingSimulatorComponent implements OnInit, OnDestroy {
     }
   }
 
-  // Thanks for playing Dapesco devs ! :)
+  // Thanks for playing ! :)
   private manageEndOfTheGame() {
     this.totalThrows = this.totalThrows + 1
     if (this.totalThrows === 20) {

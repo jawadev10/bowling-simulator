@@ -51,7 +51,7 @@ describe('BowlingSimulatorComponent', () => {
   describe('validators', () => {
     it('should check the min validator of the pins input', () => {
       // @ts-ignore
-      component.pinsNumber.setValue(-5);
+      component.pinsNumber.setValue(-4);
       fixture.detectChanges();
       expect(component.pinsNumber.valid).toBeFalsy();
     });
