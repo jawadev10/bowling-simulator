@@ -72,7 +72,7 @@ export class BowlingSimulatorComponent implements OnInit, OnDestroy {
   private manageEndOfTheGame() {
     this.totalThrows = this.totalThrows + 1
     if (this.totalThrows === 20) {
-      alert('Thanks for playing Dapesco, your total score is : ' + this.totalScore + '. Please refresh the page to start a new game.');
+      alert('Thanks for playing, your total score is : ' + this.totalScore + '. Please refresh the page to start a new game.');
       this.gameFinished = true;
     }
   }
